@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>jQuery Codealong</title>
+    <script
+       src="https://code.jquery.com/jquery-3.2.1.min.js"
+       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+       crossorigin="anonymous"></script>
+    <style>
+      a.test {
+          font-weight: bold;
+      }
+    </style>
+    <script>
+    $(document).ready(function() {
+
+      // Add click event handler to a tag
+      $('a').click(function(event) {
+
+        // Cancel default navigation of link
+        event.preventDefault();
+
+        // Wrap the target element into jQuery object
+        var target = $(event.target);
+
+        // Add class "test" to target element
+        target.addClass("test");
+
+        // Give paragraph text
+        $('p').text('You are welcome!');
+
+        // Fade out target element
+        target.fadeOut('slow');
+
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <a href="">Thanks</a>
+    <p></p>
+  </body>
+</html>
