@@ -1,9 +1,5 @@
-class Node {
-  constructor(data = null) {
-    this.data = data;
-    this.next = null;
-  }
-}
+let Queue = require('./Queue.js')
+let Node = require('./Node.js')
 
 let myNode = new Node(3);
 console.log("myNode", myNode);
@@ -14,11 +10,22 @@ class Stack {
   }
 
   push(item) {
-    console.log("TODO: push item into stack")
+    console.log("pushing item into stack")
+    let newNode = new Node(item);
+    newNode.next = this.top;
+    this.top = newNode;
   }
 
   pop() {
-    console.log("TODO: pop item off stack")
+    console.log("popping item off stack")
+    if (this.top) {
+      let item = this.top.data;
+      this.top = this.top.next;
+      return item;
+    }
+    else {
+      return null;
+    }
   }
 }
 
@@ -31,21 +38,6 @@ myStack.pop();
 myStack.pop();
 console.log("myStack", myStack);
 
-class Queue {
-  constructor() {
-    this.first = null;
-    this.last = null;
-  }
-
-  enqueue(item) {
-    console.log("TODO: enqueue item into queue")
-  }
-
-  dequeue(item) {
-    console.log("TODO: dequeue item from queue")
-  }
-}
-
 let myQueue = new Queue();
 console.log("myQueue", myQueue);
 myQueue.enqueue(7);
@@ -54,5 +46,3 @@ console.log("myQueue", myQueue);
 myQueue.dequeue();
 myQueue.dequeue();
 console.log("myQueue", myQueue);
-
-exports.queue = Queue
