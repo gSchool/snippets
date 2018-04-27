@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // Add click event handler to a tag
+        $('a').click(function(event) {
+          console.log("event.target", event.target)
+
+          event.preventDefault()
+
+          // Wrap the target element into jQuery object
+          var target = $(event.target);
+
+          // Add class "test" to target element
+          target.addClass("test");
+
+          // Give paragraph text
+          $('p').text('You are welcome!');
+
+          // Fade out target element
+          target.fadeOut('slow');
+        });
+      })
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <a href="">Thanks</a>
+    <p></p>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("button").click(function(){
+          console.log("button clicked");
+          $.ajax({url: "http://api.wunderground.com/api/41c93dff69d2241b/geolookup/conditions/q/CO/Boulder.json", success: function(result){
+              console.log(result);
+              $("div").text(result)
+          }});
+          console.log("i'm here")
+      });
+    });
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <button>Click Me</button>
+    <div id="div1"></div>
+  </body>
+</html>

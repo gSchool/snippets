@@ -1,0 +1,64 @@
+.the-flex-property {
+  display: flex;
+}
+.block {
+  border: solid black 1px;
+}
+.blockA {
+  flex: 1;
+}
+.blockB {
+  flex: 3;
+}
+.flex-direction {
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+}
+.justify-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.align-items {
+  height: 100px; /* this is necessary to see align-items working */
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
+  align-items: flex-end;
+}
+.align-content {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: grey;
+  align-content: flex-end; /* no effect when only one line of items */
+}
+.blockC {
+  width: 100%;
+}
+.blockD {
+  width: 100%;
+}
+.flex-grow {
+  display: flex;
+}
+.grow {
+  flex-grow: 1;
+}
+.noGrow {
+  flex-grow: 0;
+}
+.flex-shrink {
+  display: flex;
+}
+.shrink {
+  flex: 2 2 400px; /* grow, shrink, basis */
+}
+.noShrink {
+  flex: 1 1 400px;  /* grow, shrink, basis */
+}
+.align-self {
+  align-self: flex-start;
+}
