@@ -31,9 +31,12 @@ function ajaxWithAxios() {
 
 function ajaxWithFetch(){
     fetch('http://api.wunderground.com/api/41c93dff69d2241b/geolookup/conditions/q/CO/Boulder.json').then(function(response) {
+        // the json method on the response object also returns a promise
+        console.log("response", response)
         return response.json();
       }).then(function(json) {
-        console.log(json);
+        // so any additional json processing must happen in another then
+        console.log("json", json)
         let div = document.querySelector("div");
         div.innerText = JSON.stringify(json);
     });

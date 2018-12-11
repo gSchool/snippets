@@ -5,16 +5,18 @@ class Person {
         this.name = name;
         this.age = age;
 
-        this.makeOlderES5 = function() {
+        this.makeOlderES5 = function(event) {
             console.log("makeOlderES5")
             console.log("this", this)
+            console.log("event.target", event.target)
             this.age++;
             console.log("this.age", this.age)
         }
 
-        this.makeOlderES6 = () => {
+        this.makeOlderES6 = (event) => {
             console.log("makeOlderES6")
             console.log("this", this)
+            console.log("event.target", event.target)
             this.age++;
             console.log("this.age", this.age)
         }
